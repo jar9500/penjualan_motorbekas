@@ -61,7 +61,7 @@ session_start();
           <a href="index.php"><img src="img/logo.png" style="width:50px; height:50px;"><a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="identitas_motor.php">Katalog Motor</a>
+          <a class="nav-link" href="identitas motor/identitas_motor.php">Katalog Motor</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Transaksi</a>

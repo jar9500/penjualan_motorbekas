@@ -8,8 +8,8 @@ session_start();
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+<script src="../bootstrap/js/bootstrap.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -58,7 +58,7 @@ session_start();
     <div class="container-fluid">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="index.php"><img src="img/logo.png" style="width:50px; height:50px;"><a>
+            <a href="../index.php"><img src="../img/logo.png" style="width:50px; height:50px;"><a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Katalog Motor</a>
@@ -71,10 +71,10 @@ session_start();
         </li>
     </ul>
     <?php if (isset($_SESSION["Nama"])) : ?>
-        <a href="logout.php" class="btn btn-light float-end">Logout</a>
+        <a href="../logout.php" class="btn btn-light float-end">Logout</a>
     <?php else : ?>
-        <a href="register.php" class="navbar btn btn-success float-end" >Register</a>
-        <a href="login.php" class="btn btn-primary float-end">Login</a>
+        <a href="../register.php" class="navbar btn btn-success float-end" >Register</a>
+        <a href="../login.php" class="btn btn-primary float-end">Login</a>
     <?php endif; ?>
     </div>
 </nav>
@@ -104,7 +104,7 @@ session_start();
 				</thead>
 				<tbody>
                 <?php
-                    include 'koneksi.php';
+                    include '../koneksi.php';
                     $data=mysqli_query($koneksi,"SELECT * FROM Identitas_Motor") or die(mysqli_error($koneksi));
                     foreach($data as $identitasmotor){?>
 					<tr>
