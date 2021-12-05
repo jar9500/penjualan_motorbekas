@@ -36,7 +36,6 @@ session_start();
         <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
         <a href="../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
-        <a href="../register.php" class="navbar btn btn-dark" >Register</a>
         <a href="../login.php" class="btn btn-light buttonnavbar">Login</a>
     <?php endif; ?>
 </nav>
@@ -166,3 +165,10 @@ session_start();
         </div>
         Hanya Pemilik yang bisa akses halaman ini, Selamat Datang <?php echo $_SESSION["Nama"] ?>
     </div>
+    <!-- Footer -->
+<footer>
+    <h6 class="text-center p-5"> @Copyright - JDRB 2021</h6>
+</footer>
+</body>
+
+</html>

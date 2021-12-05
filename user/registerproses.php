@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
 $Nama=$_POST['Nama'];
 $Password=(md5($_POST['Password']));;
@@ -13,7 +13,7 @@ VALUES('$Nama','$Password','$Hak_Akses','$Create_Date','$Manager')")
 or die(mysqli_error($koneksi));
 
 if($query){
-    header("Location: login.php");
+    header("Location: ../index.php");
 }else{
     echo"Gagal Input";
 }

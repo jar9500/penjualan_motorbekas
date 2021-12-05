@@ -17,20 +17,17 @@
           <h2 style="text-align: left; padding-left: 1%">Login</h2>
         </div>
         <form method="post" class="form" action="loginproses.php">
-          <label for="user-name" style="padding-left: 30px; text-align: left">Nama</label> <br />
+          <label for="user-name" style="padding-left: 30px; text-align: left">Nama</label> <br>
           <input id="user-name" style="margin-left: 35px" class="form-content" type="text" name="Nama" autocomplete="on" required />
           <div class="form-border"></div>
-          <label for="user-password" style="padding-left: 30px; padding-top: 22px">Password</label> <br />
+          <label for="user-password" style="padding-left: 30px; padding-top: 22px">Password</label> <br>
           <input id="user-password" style="margin-left: 35px" class="form-content" type="password" name="Password" required />
           <div class="form-border"></div>
-          <br />
+          <br>
           <div>
           <button class="btn btn-primary button1" type="submit" name="button">Login</button>
           </div>
-          <br />
-          <div style="font-size: 12px; margin-left: 8%;">
-            <p>Don't have account? <a href="register.php">Sign Up</a></p>
-          </div>
+          <br>
         </form>
       </div>
     </section>
