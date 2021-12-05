@@ -24,8 +24,8 @@
           <label for="user-password" style="padding-left: 30px; padding-top: 22px">Password</label> <br />
           <input id="user-password" style="margin-left: 35px" class="form-content" type="password" name="Password" required />
           <div class="form-border"></div>
-          <label class="col-sm-2 col-form-label" for="Hak_Akses">Hak Akses</label>
-            <div class="col-sm-2">
+          <label class="col-sm-6 mt-3 col-form-label" style="margin-left: 7%" for="Hak_Akses">Hak Akses</label>
+            <div class="col-sm-4" style="margin-left: 7%; margin-top:10px;">
               <select class="form-control" name="Hak_Akses">
                 <option selected>Hak Akses</option>
                 <option value="Pemilik">Pemilik</option>
@@ -38,10 +38,10 @@
           <input id="user-password" style="margin-left: 35px" class="form-content" type="text" name="Manager" required />
           <div class="form-border"></div>
           <br />
-          <button class="btn btn-primary" type="submit" name="button">Daftar</button>
+          <button class="btn btn-primary button1" type="submit" name="button">Daftar</button>
           <br />
-          <div style="font-size: 12px; margin-left: 20%">
-            <p>Have account? <a href="login.html">Login</a> Here!</p>
+          <div style="font-size: 12px; margin-left: 8%; margin-top:4%">
+            <p>Have account? <a href="login.php">Login</a> Here!</p>
           </div>
         </form>
       </div>

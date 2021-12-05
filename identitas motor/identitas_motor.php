@@ -33,11 +33,11 @@ session_start();
     </ul>
     </div>
     <?php if (isset($_SESSION["Nama"])) : ?>
-        <p class="h6 text-white">Halo,<?php echo $_SESSION["Nama"] ?></p>
-        <a href="logout.php" class="btn btn-light float-end">Logout</a>
+        <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
+        <a href="../logout.php" class="btn btn-light buttonLogout">Logout</a>
     <?php else : ?>
-        <a href="register.php" class="navbar btn btn-dark" >Register</a>
-        <a href="login.php" class="btn btn-light float-end">Login</a>
+        <a href="../register.php" class="navbar btn btn-dark" >Register</a>
+        <a href="../login.php" class="btn btn-light float-end">Login</a>
     <?php endif; ?>
 </nav>
 <!-- header -->

@@ -31,13 +31,14 @@ session_start();
             <a class="nav-link" href="#">Kelola User</a>
         </li>
     </ul>
-    <?php if (isset($_SESSION["Nama"])) : ?>
-        <a href="../logout.php" class="btn btn-light float-end">Logout</a>
-    <?php else : ?>
-        <a href="../register.php" class="navbar btn btn-success float-end" >Register</a>
-        <a href="../login.php" class="btn btn-primary float-end">Login</a>
-    <?php endif; ?>
     </div>
+    <?php if (isset($_SESSION["Nama"])) : ?>
+        <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
+        <a href="../logout.php" class="btn btn-light buttonLogout">Logout</a>
+    <?php else : ?>
+        <a href="../register.php" class="navbar btn btn-dark" >Register</a>
+        <a href="../login.php" class="btn btn-light float-end">Login</a>
+    <?php endif; ?>
 </nav>
 <!-- header -->
 <div class="header">

@@ -24,10 +24,12 @@
           <input id="user-password" style="margin-left: 35px" class="form-content" type="password" name="Password" required />
           <div class="form-border"></div>
           <br />
-          <button class="btn btn-primary" type="submit" name="button">Login</button>
+          <div>
+          <button class="btn btn-primary button1" type="submit" name="button">Login</button>
+          </div>
           <br />
-          <div style="font-size: 12px; margin-left: 20%">
-            <p>Don't have account? <a href="register.html">Sign Up</a></p>
+          <div style="font-size: 12px; margin-left: 8%;">
+            <p>Don't have account? <a href="register.php">Sign Up</a></p>
           </div>
         </form>
       </div>
