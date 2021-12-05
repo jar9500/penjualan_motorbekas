@@ -9,56 +9,16 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
   <script src="bootstrap/js/bootstrap.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: "Open Sans";
-      width: 100%;
-      height: 100%;
-    }
-
-    h1 {
-      font-weight: bold;
-      text-align: center;
-      margin-top: 4%;
-    }
-
-    p {
-      margin-top: 2%;
-      font-size: 16px;
-      text-align: center;
-    }
-
-    .carousel-item {
-      width: 40%;
-      height: 40%;
-      float: center;
-      margin-left: 30%;
-    }
-    footer{
-      width: 100%;
-      height: 200px;
-      margin-top: 10%;
-      background-color: black;
-      
-    }h4{
-      color: white;
-      font-weight: bold;
-      font-size: small;
-    }
-  </style>
 </head>
-
 <body>
   <!-- navbar -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="index.php"><img src="img/logo.png" style="width:50px; height:50px;"><a>
+          <a href="index.php"><img src="img/logo.png" class="logo-navbar"><a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="identitas motor/identitas_motor.php">Katalog Motor</a>
@@ -124,7 +84,7 @@ session_start();
 
   <!-- Footer -->
   <footer>
-    <h4 style="text-align: center; padding: 5%;"> @Copyright - JDRB 2021</h4>
+    <h6 class="text-center p-5"> @Copyright - JDRB 2021</h6>
   </footer>
 
 </body>

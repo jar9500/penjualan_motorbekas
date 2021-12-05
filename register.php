@@ -6,70 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
-    <style>
-      body {
-        background-repeat: no-repeat;
-        font-family: "Open Sans";
-        width: 100%;
-        height: 100%;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      #box1-content {
-        padding: 12px 44px;
-      }
-
-      #box1-title {
-        font-family: "Open Sans";
-        color: #637290;
-        padding-bottom: 23px;
-        padding-top: 20px;
-        margin: 20px;
-        text-align: left;
-      }
-
-      #box1 {
-        float: left;
-        width: 30%;
-        font-size: 20px;
-        text-align: left;
-        margin-left: 40px;
-        margin-top: 70px;
-        height: 100%;
-      }
-
-      #box2 {
-        float: right;
-        width: 65%;
-        padding: 0px;
-        margin-left: 0px;
-        height: 100%;
-      }
-
-      .form-border {
-        background: #00000060;
-        height: 2px;
-        width: 70%;
-        margin-left: 30px;
-      }
-
-      .form-content {
-        background: #ffffff;
-        border: none;
-        outline: none;
-        padding-top: 14px;
-      }
-      .buttonLogin {
-        margin-left: 32%;
-      }
-    </style>
   </head>
 
   <body>
