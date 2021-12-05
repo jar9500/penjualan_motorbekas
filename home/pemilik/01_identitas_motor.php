@@ -8,9 +8,9 @@ session_start();
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="../style.css">
-<script src="../bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -19,24 +19,24 @@ session_start();
     <div class="container-fluid">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="../index.php"><img src="../img/logo.png" class="logo-navbar"><a>
+            <a href="01_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="identitas_motor.php">Katalog Motor</a>
+            <a class="nav-link" href="01_identitas_motor.php">Katalog Motor</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Transaksi</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../user/user.php">Kelola User</a>
+            <a class="nav-link" href="01_user.php">Kelola User</a>
         </li>
     </ul>
     </div>
     <?php if (isset($_SESSION["Nama"])) : ?>
         <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
-        <a href="../logout.php" class="btn btn-light buttonnavbar">Logout</a>
+        <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
-        <a href="../login.php" class="btn btn-light buttonnavbar">Login</a>
+        <a href="../../login.php" class="btn btn-light buttonnavbar">Login</a>
     <?php endif; ?>
 </nav>
 <!-- header -->
@@ -73,7 +73,7 @@ session_start();
 				</thead>
 				<tbody>
                 <?php
-                    include '../koneksi.php';
+                    include '../../koneksi.php';
                     $data=mysqli_query($koneksi,"SELECT * FROM Identitas_Motor") or die(mysqli_error($koneksi));
                     foreach($data as $identitasmotor){?>
 					<tr>

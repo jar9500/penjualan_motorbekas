@@ -30,7 +30,7 @@ if($cek > 0){
 		$_SESSION['Nama'] = $Nama;
 		$_SESSION['Hak_Akses'] = "Pemilik";
 		// alihkan ke halaman dashboard admin
-		header("location:home/pemilik.php");
+		header("location:home/pemilik/01_index.php");
 
 	// cek jika user login sebagai Teller
 	}else if($data['Hak_Akses']=="Teller"){
@@ -38,7 +38,7 @@ if($cek > 0){
 		$_SESSION['Nama'] = $Nama;
 		$_SESSION['Hak_Akses'] = "Teller";
 		// alihkan ke halaman dashboard pegawai
-		header("location:home/teller.php");
+		header("location:home/teller/02_index.php");
 
 	// cek jika user login sebagai Customer
 	}else if($data['Hak_Akses']=="Customer"){
@@ -46,24 +46,22 @@ if($cek > 0){
 		$_SESSION['Nama'] = $Nama;
 		$_SESSION['Hak_Akses'] = "Customer";
 		// alihkan ke halaman dashboard pengurus
-		header("location:home/customer.php");
+		header("location:home/customer/customer.php");
 
     }else if($data['Hak_Akses']=="Teknisi"){
 		// buat session login dan username
 		$_SESSION['Nama'] = $Nama;
 		$_SESSION['Hak_Akses'] = "Teknisi";
 		// alihkan ke halaman dashboard pengurus
-		header("location:home/teknisi.php");
+		header("location:home/teknisi/teknisi.php");
 
 	}else{
 
 		// alihkan ke halaman login kembali
-		header("location:index.php?pesan=gagal");
+		header("location:../index.php?pesan=gagal");
 	}	
 }else{
-	header("location:index.php?pesan=gagal");
+	header("location:../index.php?pesan=gagal");
 }
-
-?>
 
 ?>
