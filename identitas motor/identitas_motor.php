@@ -34,10 +34,10 @@ session_start();
     </div>
     <?php if (isset($_SESSION["Nama"])) : ?>
         <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
-        <a href="../logout.php" class="btn btn-light buttonLogout">Logout</a>
+        <a href="../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
         <a href="../register.php" class="navbar btn btn-dark" >Register</a>
-        <a href="../login.php" class="btn btn-light float-end">Login</a>
+        <a href="../login.php" class="btn btn-light buttonnavbar">Login</a>
     <?php endif; ?>
 </nav>
 <!-- header -->
@@ -52,13 +52,23 @@ session_start();
 				<thead>
 					<tr>
 						<th>ID</th>
+						<th>No Reg.</th>
 						<th>Nama Pemilik</th>
+						<th>Alamat</th>
+						<th>No Rangka</th>
+						<th>No Mesin</th>
+						<th>Plat</th>
 						<th>Merk</th>
 						<th>Tipe</th>
 						<th>Model</th>
 						<th>Tahun Pembuatan</th>
 						<th>Isi Silinder</th>
+						<th>Bahan Bakar</th>
 						<th>Warna TNKB</th>
+						<th>Tahun Reg.</th>
+						<th>BPKB</th>
+						<th>Kode Lokasi</th>
+						<th>Masa STNK</th>
                         <th>Edit/Hapus</th>
 					</tr>
 				</thead>
@@ -69,16 +79,26 @@ session_start();
                     foreach($data as $identitasmotor){?>
 					<tr>
 						<td><?php echo $identitasmotor['ID'];?></td>
+						<td><?php echo $identitasmotor['NoRegistrasi'];?></td>
 						<td><?php echo $identitasmotor['NamaPemilik'];?></td>
+						<td><?php echo $identitasmotor['Alamat'];?></td>
+						<td><?php echo $identitasmotor['NoRangka'];?></td>
+						<td><?php echo $identitasmotor['NoMesin'];?></td>
+						<td><?php echo $identitasmotor['PlatNo'];?></td>
 						<td><?php echo $identitasmotor['Merk'];?></td>
 						<td><?php echo $identitasmotor['Type'];?></td>
 						<td><?php echo $identitasmotor['Model'];?></td>
 						<td><?php echo $identitasmotor['TahunPembuatan'];?></td>
 						<td><?php echo $identitasmotor['IsiSilinder'];?></td>
+						<td><?php echo $identitasmotor['BahanBakar'];?></td>
 						<td><?php echo $identitasmotor['WarnaTNKB'];?></td>
+						<td><?php echo $identitasmotor['TahunRegistrasi'];?></td>
+						<td><?php echo $identitasmotor['NoBPKB'];?></td>
+						<td><?php echo $identitasmotor['KodeLokasi'];?></td>
+						<td><?php echo $identitasmotor['MasaBerlakuSTNK'];?></td>
 						<td>
-                            <a href="identitas_motordelete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
-                            <a href="identitas_motorupdate.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
+                            <a href="identitas_motor_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
+                            <a href="identitas_motor_update.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
 						</td>
 					</tr>
                 <?php }
@@ -87,7 +107,7 @@ session_start();
             </table>
         </div>
     </div>
-	<a class="btn btn-success my-6" href="identitas_motor_create.php" >Tambah Data</a>
+	<a class="btn btn-success my-4" href="identitas_motor_create.php" >Tambah Data</a>
 </div>
 
 <!-- Footer -->
