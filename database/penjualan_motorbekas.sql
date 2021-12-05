@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2021 at 05:52 PM
+-- Generation Time: Dec 05, 2021 at 05:51 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.26
 
@@ -53,12 +53,12 @@ CREATE TABLE `identitas_motor` (
 --
 
 INSERT INTO `identitas_motor` (`ID`, `NoRegistrasi`, `NamaPemilik`, `Alamat`, `NoRangka`, `NoMesin`, `PlatNo`, `Merk`, `Type`, `Model`, `TahunPembuatan`, `IsiSilinder`, `BahanBakar`, `WarnaTNKB`, `TahunRegistrasi`, `NoBPKB`, `KodeLokasi`, `MasaBerlakuSTNK`) VALUES
-(10001, 2021000001, 'Jadid Alif Ramadhan', 'Bekasi Mustika Jaya', 'JAR0250001', 'BKS0250001', 'B2525KKP', 'Honda', 'Matic', 'Beat', 2012, 150, 'Bensin', 'Hitam', 2021, 'AA000001', 'B', '2022-10-25'),
-(10002, 2021000002, 'Ramadhan Alifia', 'Karawang Galuh Mas', 'JAR0250002', 'BKS0250002', 'T1234KCP', 'Yamaha', 'Bebek', 'Jupiter', 2009, 125, 'Bensin', 'Putih', 2021, 'AA000002', 'T', '2021-11-25'),
+(10001, 2021000001, 'Jadid Alif Ramadhan', 'Bekasi Mustika Jaya', 'JAR0250001', 'BKS0250001', 'B2525KKP', 'Honda', 'Matic', 'Beat', 2013, 150, 'Bensin', 'Hitam', 2021, 'AA000001', 'B', '2022-10-25'),
+(10002, 2021000002, 'Ramadhan Alifia', 'Karawang Galuh Mas', 'JAR0250002', 'BKS0250002', 'T1234KCP', 'Yamaha', 'Bebek', 'Jupiter', 2009, 125, 'Bensin', 'Hijau', 2021, 'AA000002', 'T', '2021-11-25'),
 (10003, 2021000003, 'Alfi Rahman Dan', 'Jakarta Kalibata', 'JAR0250003', 'BKS0250003', 'B1925SCP', 'Yamaha', 'Sport', 'PCX', 2018, 220, 'Bensin', 'Hitam', 2021, 'AA000003', 'B', '2024-11-17'),
-(10004, 2021000004, 'Kasino', 'Jakarta Cakung', 'JAR0250004', 'BKS0250004', 'B2020TSA', 'Honda', 'Bebek', 'Revo', 2017, 120, 'Bensin', 'Hijau', 2021, 'AA000004', 'B', '2021-07-14'),
+(10004, 2021000004, 'Kasino', 'Jakarta Cakung', 'JAR0250004', 'BKS0250004', 'B2020TSA', 'Honda', 'Bebek', 'Revo', 2017, 120, 'Bensin', 'Hitam', 2021, 'AA000004', 'B', '2021-07-14'),
 (10005, 2021000005, 'Dono', 'Bogor Cibadak', 'JAR0250005', 'BKS0250005', 'F7780PTM', 'Kawasaki', 'Sport', 'Ninja', 2018, 250, 'Bensin', 'Merah', 2021, 'AA000005', 'F', '2021-11-10'),
-(10006, 2021000006, 'Indro', 'Karawang Cikampek', 'JAR0250006', 'BKS0250006', 'T1980TTM', 'Honda', 'Matic', 'Vario', 2014, 130, 'Bensin', 'Putih', 2021, 'AA000006', 'T', '2022-04-16');
+(10009, 2021000006, 'Indro', 'Karawang Cikampek', 'JAR0250006', 'BKS0250006', 'T1980TTM', 'Honda', 'Matic', 'Vario', 2014, 130, 'Bensin', 'Putih', 2021, 'AA000006', 'T', '2022-04-16');
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `user` (
   `Nama` varchar(20) NOT NULL,
   `Password` varchar(100) NOT NULL,
   `Hak_Akses` varchar(100) NOT NULL,
-  `Create_date` date NOT NULL,
+  `Create_Date` date NOT NULL DEFAULT current_timestamp(),
   `Manager` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -79,8 +79,9 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`IDUser`, `Nama`, `Password`, `Hak_Akses`, `Create_date`, `Manager`) VALUES
-(1, 'Bayu', 'd0c6a909f539307f0f60282674009e31', 'Pemilik', '2021-12-04', 'Motor');
+INSERT INTO `user` (`IDUser`, `Nama`, `Password`, `Hak_Akses`, `Create_Date`, `Manager`) VALUES
+(1, 'Bayu', 'd0c6a909f539307f0f60282674009e31', 'Pemilik', '2021-12-04', 'Motor'),
+(3, 'Jadid', 'e90d1b819d8a0e9398aad9ffad3c6ee2', 'Customer', '2021-12-05', '-');
 
 --
 -- Indexes for dumped tables
@@ -106,7 +107,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `IDUser` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IDUser` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
