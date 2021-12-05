@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
   <!-- navbar -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
     <div class="container-fluid">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -30,18 +30,19 @@ session_start();
           <a class="nav-link" href="#">Kelola User</a>
         </li>
       </ul>
-      <?php if (isset($_SESSION["Nama"])) : ?>
+    </div>
+    <?php if (isset($_SESSION["Nama"])) : ?>
+        <p class="h6 text-white">Halo,<?php echo $_SESSION["Nama"] ?></p>
         <a href="logout.php" class="btn btn-light float-end">Logout</a>
       <?php else : ?>
-        <a href="register.php" class="navbar btn btn-success float-end" >Register</a>
-        <a href="login.php" class="btn btn-primary float-end">Login</a>
+        <a href="register.php" class="navbar btn btn-dark" >Register</a>
+        <a href="login.php" class="btn btn-light float-end">Login</a>
       <?php endif; ?>
-    </div>
   </nav>
   <!-- header -->
   <div class="header">
-    <h1>Penjualan Motor Bekas</h1>
-    <p> Motorbekas.com adalah website menyedia layanan penjualan motor bekas, <br>
+    <h1 class="mt-5">Penjualan Motor Bekas</h1>
+    <p class="my-3 h5 text-center"> Motorbekas.com adalah website menyedia layanan penjualan motor bekas, <br>
       berbagai motor bekas tersedia disini dengan kualitas yang terbaik.</p>
   </div>
   <!-- body -->

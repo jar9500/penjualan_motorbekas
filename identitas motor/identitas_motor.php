@@ -22,7 +22,7 @@ session_start();
             <a href="../index.php"><img src="../img/logo.png" class="logo-navbar"><a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Katalog Motor</a>
+            <a class="nav-link" href="identitas_motor.php">Katalog Motor</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Transaksi</a>
@@ -31,19 +31,18 @@ session_start();
             <a class="nav-link" href="#">Kelola User</a>
         </li>
     </ul>
-    <?php if (isset($_SESSION["Nama"])) : ?>
-        <a href="../logout.php" class="btn btn-light float-end">Logout</a>
-    <?php else : ?>
-        <a href="../register.php" class="navbar btn btn-success float-end" >Register</a>
-        <a href="../login.php" class="btn btn-primary float-end">Login</a>
-    <?php endif; ?>
     </div>
+    <?php if (isset($_SESSION["Nama"])) : ?>
+        <p class="h6 text-white">Halo,<?php echo $_SESSION["Nama"] ?></p>
+        <a href="logout.php" class="btn btn-light float-end">Logout</a>
+    <?php else : ?>
+        <a href="register.php" class="navbar btn btn-dark" >Register</a>
+        <a href="login.php" class="btn btn-light float-end">Login</a>
+    <?php endif; ?>
 </nav>
 <!-- header -->
 <div class="header">
-    <marquee direction="Right">
-        <h1>Katalog Identitas Motor Bekas</h1>
-    </marquee>
+    <h1 class="mt-5">Katalog Identitas Motor Bekas</h1>
 </div>
 <!-- body -->
 <div class="container">
@@ -78,8 +77,8 @@ session_start();
 						<td><?php echo $identitasmotor['IsiSilinder'];?></td>
 						<td><?php echo $identitasmotor['WarnaTNKB'];?></td>
 						<td>
-                            <a href="identitas_motordelete.php?idpasien=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
-                            <a href="identitas_motorupdate.php?idpasien=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
+                            <a href="identitas_motordelete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
+                            <a href="identitas_motorupdate.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
 						</td>
 					</tr>
                 <?php }
@@ -88,7 +87,7 @@ session_start();
             </table>
         </div>
     </div>
-	<a class="btn btn-success my-6" href="identitas_motorcreate.php" >Tambah Data</a>
+	<a class="btn btn-success my-6" href="identitas_motor_create.php" >Tambah Data</a>
 </div>
 
 <!-- Footer -->
