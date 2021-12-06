@@ -36,13 +36,12 @@ session_start();
         <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
         <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
-        <a href="../../register.php" class="navbar btn btn-dark" >Register</a>
         <a href="../../login.php" class="btn btn-light buttonnavbar">Login</a>
     <?php endif; ?>
 </nav>
 <!-- header -->
 <div class="header">
-    <h1 class="mt-5">User</h1>
+    <h1 class="mt-5">Transaksi</h1>
 </div>
 <!-- body -->
 <div class="container">
@@ -51,24 +50,25 @@ session_start();
 			<table class="table">
 				<thead>
 					<tr>
-						<th>ID User</th>
-						<th>Nama</th>
-						<th>Hak Akses</th>
-						<th>Create Date</th>
-						<th>Manager</th>
+						<th>ID</th>
+						<th>No Reg.</th>
+						<th>Nama Pemilik</th>
+                        <th>Edit/Hapus</th>
 					</tr>
 				</thead>
 				<tbody>
                 <?php
                     include '../../koneksi.php';
-                    $data=mysqli_query($koneksi,"SELECT * FROM user") or die(mysqli_error($koneksi));
-                    foreach($data as $pengguna){?>
+                    $data=mysqli_query($koneksi,"SELECT * FROM Identitas_Motor") or die(mysqli_error($koneksi));
+                    foreach($data as $identitasmotor){?>
 					<tr>
-						<td><?php echo $pengguna['IDUser'];?></td>
-						<td><?php echo $pengguna['Nama'];?></td>
-						<td><?php echo $pengguna['Hak_Akses'];?></td>
-						<td><?php echo $pengguna['Create_Date'];?></td>
-						<td><?php echo $pengguna['Manager'];?></td>
+						<td><?php echo $identitasmotor['ID'];?></td>
+						<td><?php echo $identitasmotor['NoRegistrasi'];?></td>
+						<td><?php echo $identitasmotor['NamaPemilik'];?></td>
+						<td>
+                            <a href="identitas_motor_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
+                            <a href="identitas_motor_update.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
+						</td>
 					</tr>
                 <?php }
                 ?>    
@@ -76,8 +76,9 @@ session_start();
             </table>
         </div>
     </div>
-    <a class="btn btn-success my-4" href="02_register.php" >Tambah Data</a>
+	<a class="btn btn-success my-4" href="../../identitas motor/identitas_motor_create.php" >Tambah Data</a>
 </div>
+
 <!-- Footer -->
 <footer>
     <h6 class="text-center p-5"> @Copyright - JDRB 2021</h6>

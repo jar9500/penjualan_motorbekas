@@ -25,7 +25,7 @@ session_start();
             <a class="nav-link" href="02_identitas_motor.php">Katalog Motor</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../../transaksi/transaksi.php">Transaksi</a>
+            <a class="nav-link" href="02_transaksi.php">Transaksi</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="02_user.php">Kelola User</a>
