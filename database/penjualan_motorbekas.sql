@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2021 at 06:21 PM
+-- Generation Time: Dec 06, 2021 at 07:25 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.26
 
@@ -80,10 +80,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`IDUser`, `Nama`, `Password`, `Hak_Akses`, `Create_Date`, `Manager`) VALUES
-(1, 'Bayu', 'd0c6a909f539307f0f60282674009e31', 'Pemilik', '2021-12-04', 'Motor'),
+(1, 'Bayu', 'd0c6a909f539307f0f60282674009e31', 'Pemilik', '2021-12-06', '-'),
 (2, 'Rico', 'ec8761509e47638ec23f59c3073bce08', 'Teller', '2021-12-06', '-'),
 (3, 'Jadid', 'e90d1b819d8a0e9398aad9ffad3c6ee2', 'Customer', '2021-12-05', '-'),
-(4, 'Dara', '3c20ade1447676f0d3667e668d92a695', 'Teknisi', '2021-12-06', '-');
+(5, 'Dian', 'd096dd8f02bdac9358a28bac34b42d3c', 'Teknisi', '2021-12-06', '-');
 
 --
 -- Indexes for dumped tables
@@ -100,16 +100,6 @@ ALTER TABLE `identitas_motor`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`IDUser`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `IDUser` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
