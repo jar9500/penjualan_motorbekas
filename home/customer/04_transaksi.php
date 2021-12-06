@@ -19,16 +19,16 @@ session_start();
     <div class="container-fluid">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="01_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
+            <a href="04_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_identitas_motor.php">Katalog Motor</a>
+            <a class="nav-link" href="04_alert.php">Katalog Motor</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_alert.php">Transaksi</a>
+            <a class="nav-link" href="04_transaksi.php">Transaksi</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_user.php">Kelola User</a>
+            <a class="nav-link" href="04_alert.php">Kelola User</a>
         </li>
     </ul>
     </div>
@@ -36,13 +36,12 @@ session_start();
         <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
         <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
-        <a href="../../register.php" class="navbar btn btn-dark" >Register</a>
         <a href="../../login.php" class="btn btn-light buttonnavbar">Login</a>
     <?php endif; ?>
 </nav>
 <!-- header -->
 <div class="header">
-    <h1 class="mt-5">User</h1>
+    <h1 class="mt-5">Transaksi</h1>
 </div>
 <!-- body -->
 <div class="container">
@@ -51,29 +50,20 @@ session_start();
 			<table class="table">
 				<thead>
 					<tr>
-						<th>ID User</th>
-						<th>Nama</th>
-						<th>Hak Akses</th>
-						<th>Create Date</th>
-						<th>Manager</th>
-						<th>Edit/Hapus</th>
+						<th>ID</th>
+						<th>No Reg.</th>
+						<th>Nama Pemilik</th>
 					</tr>
 				</thead>
 				<tbody>
                 <?php
                     include '../../koneksi.php';
-                    $data=mysqli_query($koneksi,"SELECT * FROM user") or die(mysqli_error($koneksi));
-                    foreach($data as $pengguna){?>
+                    $data=mysqli_query($koneksi,"SELECT * FROM Identitas_Motor") or die(mysqli_error($koneksi));
+                    foreach($data as $identitasmotor){?>
 					<tr>
-						<td><?php echo $pengguna['IDUser'];?></td>
-						<td><?php echo $pengguna['Nama'];?></td>
-						<td><?php echo $pengguna['Hak_Akses'];?></td>
-						<td><?php echo $pengguna['Create_Date'];?></td>
-						<td><?php echo $pengguna['Manager'];?></td>
-						<td>
-                            <a href="user_delete.php?IDUser=<?php echo $pengguna['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
-                            <a href="user_update.php?IDUser=<?php echo $pengguna['ID']?>" class="btn btn-warning">Edit</a>
-						</td>
+						<td><?php echo $identitasmotor['ID'];?></td>
+						<td><?php echo $identitasmotor['NoRegistrasi'];?></td>
+						<td><?php echo $identitasmotor['NamaPemilik'];?></td>
 					</tr>
                 <?php }
                 ?>    
@@ -81,7 +71,6 @@ session_start();
             </table>
         </div>
     </div>
-	<a class="btn btn-success my-4" href="../../user/register.php" >Tambah Data</a>
 </div>
 
 <!-- Footer -->

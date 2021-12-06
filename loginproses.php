@@ -46,14 +46,14 @@ if($cek > 0){
 		$_SESSION['Nama'] = $Nama;
 		$_SESSION['Hak_Akses'] = "Customer";
 		// alihkan ke halaman dashboard pengurus
-		header("location:home/customer/customer.php");
+		header("location:home/customer/04_index.php");
 
     }else if($data['Hak_Akses']=="Teknisi"){
 		// buat session login dan username
 		$_SESSION['Nama'] = $Nama;
 		$_SESSION['Hak_Akses'] = "Teknisi";
 		// alihkan ke halaman dashboard pengurus
-		header("location:home/teknisi/teknisi.php");
+		header("location:home/teknisi/03_index.php");
 
 	}else{
 

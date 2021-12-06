@@ -19,16 +19,16 @@ session_start();
     <div class="container-fluid">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="01_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
+            <a href="03_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_identitas_motor.php">Katalog Motor</a>
+            <a class="nav-link" href="03_alert.php">Katalog Motor</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_alert.php">Transaksi</a>
+            <a class="nav-link" href="03_transaksi.php">Transaksi</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_user.php">Kelola User</a>
+            <a class="nav-link" href="03_alert.php">Kelola User</a>
         </li>
     </ul>
     </div>
@@ -41,7 +41,7 @@ session_start();
 </nav>
 <!-- header -->
 <div class="header">
-    <h1 class="mt-5">Katalog Identitas Motor Bekas</h1>
+    <h1 class="mt-5">Transaksi</h1>
 </div>
 <!-- body -->
 <div class="container">
@@ -53,22 +53,7 @@ session_start();
 						<th>ID</th>
 						<th>No Reg.</th>
 						<th>Nama Pemilik</th>
-						<th>Alamat</th>
-						<th>No Rangka</th>
-						<th>No Mesin</th>
-						<th>Plat</th>
-						<th>Merk</th>
-						<th>Tipe</th>
-						<th>Model</th>
-						<th>Tahun Pembuatan</th>
-						<th>Isi Silinder</th>
-						<th>Bahan Bakar</th>
-						<th>Warna TNKB</th>
-						<th>Tahun Reg.</th>
-						<th>BPKB</th>
-						<th>Kode Lokasi</th>
-						<th>Masa STNK</th>
-                        <th>Edit/Hapus</th>
+                        <th>Hapus</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -80,24 +65,8 @@ session_start();
 						<td><?php echo $identitasmotor['ID'];?></td>
 						<td><?php echo $identitasmotor['NoRegistrasi'];?></td>
 						<td><?php echo $identitasmotor['NamaPemilik'];?></td>
-						<td><?php echo $identitasmotor['Alamat'];?></td>
-						<td><?php echo $identitasmotor['NoRangka'];?></td>
-						<td><?php echo $identitasmotor['NoMesin'];?></td>
-						<td><?php echo $identitasmotor['PlatNo'];?></td>
-						<td><?php echo $identitasmotor['Merk'];?></td>
-						<td><?php echo $identitasmotor['Type'];?></td>
-						<td><?php echo $identitasmotor['Model'];?></td>
-						<td><?php echo $identitasmotor['TahunPembuatan'];?></td>
-						<td><?php echo $identitasmotor['IsiSilinder'];?></td>
-						<td><?php echo $identitasmotor['BahanBakar'];?></td>
-						<td><?php echo $identitasmotor['WarnaTNKB'];?></td>
-						<td><?php echo $identitasmotor['TahunRegistrasi'];?></td>
-						<td><?php echo $identitasmotor['NoBPKB'];?></td>
-						<td><?php echo $identitasmotor['KodeLokasi'];?></td>
-						<td><?php echo $identitasmotor['MasaBerlakuSTNK'];?></td>
 						<td>
                             <a href="identitas_motor_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
-                            <a href="identitas_motor_update.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
 						</td>
 					</tr>
                 <?php }
@@ -106,7 +75,6 @@ session_start();
             </table>
         </div>
     </div>
-	<a class="btn btn-success my-4" href="identitas_motor_create.php" >Tambah Data</a>
 </div>
 
 <!-- Footer -->

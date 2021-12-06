@@ -20,15 +20,6 @@ session_start();
         <li class="nav-item">
           <a href="index.php"><img src="img/logo.png" class="logo-navbar"><a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="identitas motor/identitas_motor.php">Katalog Motor</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="transaksi/transaksi.php">Transaksi</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="user/user.php">Kelola User</a>
-        </li>
       </ul>
     </div>
     <?php if (isset($_SESSION["Nama"])) : ?>
