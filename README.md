@@ -1,18 +1,19 @@
 # Penjualan Motor Bekas
 
-Projek yang tertera pada GitHub ini merupakan projek pengembangan website untuk penjualan motor bekas.
+The project listed on this GitHub is a project development of website-based for selling used motorcycles or "Penjualan Motor Bekas" in Bahasa.
 
 ## Contributing
 
-Member yang bertanggung jawab atas projek ini diantaranya :
+The members who are responsible for this project are :
 
-1. Diandara Tresya Haniva
-2. Jadid Alif Ramadhan
-3. Rico Senjaya
+1. Diandara Tresya Haniva (5D/19071)
+2. Jadid Alif Ramadhan (5D/19025)
+3. Rico Senjaya (5D/19122)
+4. Rizky Bayu Dwiputra (5D/19126)
 
-Pull dan requests sangat terbuka untuk umum. Untuk perubahan skala besar, tolong buka "issue" terlebih dahulu untuk mendiskusikan apa saja yang sekiranya akan diubah kedepannya.
+Pull and requests are open to the public. For large-scale changes, please open the "issue" first to discuss anything that you guys will change in the future. Thank You....
 
-Terima Kasih
+Best Regard's, from us.
 
 ## Tools
 
