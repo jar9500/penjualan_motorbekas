@@ -56,12 +56,13 @@ if($cek > 0){
 		header("location:home/teknisi/03_index.php");
 
 	}else{
-
+		echo "<script>alert('Nama atau Password Tidak Terdaftar !')</script>";
 		// alihkan ke halaman login kembali
-		header("location:../index.php?pesan=gagal");
+		header("location:login.php?pesan=gagal");
 	}	
 }else{
-	header("location:../index.php?pesan=gagal");
+	echo "<script>alert('Nama atau Password Tidak Terdaftar !')
+	history.back(self)</script>";
 }
 
 ?>
