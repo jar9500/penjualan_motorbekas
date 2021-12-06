@@ -30,9 +30,9 @@ session_start();
             <a class="nav-link" href="01_user.php">Kelola User</a>
         </li>
       </ul>
+      <?php if (isset($_SESSION["Nama"])) : ?>
+        <p class="h6 text-white">Halo <?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Hak_Akses"] ?></p>
     </div>
-    <?php if (isset($_SESSION["Nama"])) : ?>
-        <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
         <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
       <?php else : ?>
         <a href="../../login.php" class="btn btn-light buttonnavbar">Login</a>

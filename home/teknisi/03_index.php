@@ -15,7 +15,7 @@
     <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
-        <div class="container-fluid">
+    <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item">
             <a href="03_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
@@ -30,9 +30,9 @@
             <a class="nav-link" href="03_alert.php">Kelola User</a>
             </li>
         </ul>
-        </div>
         <?php if (isset($_SESSION["Nama"])) : ?>
-            <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
+            <p class="h6 text-white">Halo <?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Hak_Akses"] ?></p>
+    </div>
             <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
         <?php else : ?>
             <a href="../../login.php" class="btn btn-light buttonnavbar">Login</a>
