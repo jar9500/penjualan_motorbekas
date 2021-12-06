@@ -71,8 +71,8 @@ session_start();
 						<td><?php echo $pengguna['Create_Date'];?></td>
 						<td><?php echo $pengguna['Manager'];?></td>
 						<td>
-                            <a href="user_delete.php?IDUser=<?php echo $pengguna['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
-                            <a href="user_update.php?IDUser=<?php echo $pengguna['ID']?>" class="btn btn-warning">Edit</a>
+                            <a href="01_user_delete.php?IDUser=<?php echo $pengguna['IDUser']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
+                            <a href="01_user_update.php?IDUser=<?php echo $pengguna['IDUser']?>" class="btn btn-warning">Edit</a>
 						</td>
 					</tr>
                 <?php }
@@ -81,7 +81,7 @@ session_start();
             </table>
         </div>
     </div>
-	<a class="btn btn-success my-4" href="../../user/register.php" >Tambah Data</a>
+	<a class="btn btn-success my-4" href="01_register.php" >Tambah Data</a>
 </div>
 
 <!-- Footer -->

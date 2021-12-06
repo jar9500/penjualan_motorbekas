@@ -14,7 +14,7 @@ VALUES('$IDUser','$Nama','$Password','$Hak_Akses','$Create_Date','$Manager')")
 or die(mysqli_error($koneksi));
 
 if($query){
-    header("Location: 02_user.php");
+    header("Location: 01_user.php");
 }else{
     echo"Gagal Input";
 }

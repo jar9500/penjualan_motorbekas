@@ -66,7 +66,7 @@ session_start();
 						<td><?php echo $identitasmotor['NoRegistrasi'];?></td>
 						<td><?php echo $identitasmotor['NamaPemilik'];?></td>
 						<td>
-                            <a href="identitas_motor_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
+                            <a href="03_transaksi_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
 						</td>
 					</tr>
                 <?php }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -16,16 +16,16 @@
         <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="02_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
+                <a href="01_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="02_identitas_motor.php">Katalog Motor</a>
+                <a class="nav-link" href="01_identitas_motor.php">Katalog Motor</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="02_transaksi.php">Transaksi</a>
+                <a class="nav-link" href="01_alert.php">Transaksi</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="02_user.php">Kelola User</a>
+                <a class="nav-link" href="01_user.php">Kelola User</a>
             </li>
         </ul>
         </div>
@@ -39,7 +39,7 @@
     <div class="container" >
             <div class="bg-light m-4 p-4">
                 <h1>Buat Akun</h1>
-                <form method="post" action="02_registerproses.php">
+                <form method="post" action="01_registerproses.php">
             <div class="form-group row my-4">
             <label class="col-sm-2 col-form-label" for="IDUser">ID User</label>
                 <div class="col-sm-4">

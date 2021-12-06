@@ -66,8 +66,8 @@ session_start();
 						<td><?php echo $identitasmotor['NoRegistrasi'];?></td>
 						<td><?php echo $identitasmotor['NamaPemilik'];?></td>
 						<td>
-                            <a href="identitas_motor_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
-                            <a href="identitas_motor_update.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
+                            <a href="02_transaksi_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
+                            <a href="02_transaksi_update.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
 						</td>
 					</tr>
                 <?php }
@@ -76,7 +76,7 @@ session_start();
             </table>
         </div>
     </div>
-	<a class="btn btn-success my-4" href="../../identitas motor/identitas_motor_create.php" >Tambah Data</a>
+	<a class="btn btn-success my-4" href="02_transaksi_create.php" >Tambah Data</a>
 </div>
 
 <!-- Footer -->
