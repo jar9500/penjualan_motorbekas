@@ -41,6 +41,12 @@
 			<h1>Buat Akun</h1>
 			<form method="post" action="registerproses.php">
         <div class="form-group row my-4">
+          <label class="col-sm-2 col-form-label" for="IDUser">ID User</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" name="IDUser" required>
+            </div>
+        </div>
+        <div class="form-group row my-4">
           <label class="col-sm-2 col-form-label" for="Nama">Nama</label>
             <div class="col-sm-4">
               <input type="text" class="form-control" name="Nama" required>

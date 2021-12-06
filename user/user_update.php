@@ -54,6 +54,12 @@ session_start();
             ?>
 			<form method="post" action="user_updateproses.php?IDUser=<?php echo $IDUser?>">
                 <div class="form-group row my-4">
+                    <label class="col-sm-2 col-form-label" for="IDUser">ID User</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="IDUser" value="<?php echo $user['IDUser']?>" required>
+                    </div>
+                </div>
+                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="Nama">Nama</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="Nama" value="<?php echo $user['Nama']?>" required>
@@ -62,7 +68,7 @@ session_start();
                 <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="Password">Password</label>
                     <div class="col-sm-4">
-                        <input type="Password" class="form-control" name="NamaPemilik" value="<?php echo $user['Password']?>" required>
+                        <input type="password" class="form-control" name="Password" value="<?php echo $user['Password']?>" required>
                     </div>
                 </div>
                 <div class="form-group row my-4">
