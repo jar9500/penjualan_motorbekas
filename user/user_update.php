@@ -54,12 +54,6 @@ session_start();
             ?>
 			<form method="post" action="user_updateproses.php?IDUser=<?php echo $IDUser?>">
                 <div class="form-group row my-4">
-                    <label class="col-sm-2 col-form-label" for="IDUser">ID User</label>
-                    <div class="col-sm-4">
-                        <input type="number" class="form-control" name="ID" value="<?php echo $user['IDUser']?>" required>
-                    </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="Nama">Nama</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="Nama" value="<?php echo $user['Nama']?>" required>
