@@ -1,4 +1,5 @@
 <?php
+$url="http://localhost/penjualan_motorbekas";
 $host="localhost";
 $user="root";
 $password="";

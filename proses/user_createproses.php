@@ -1,5 +1,6 @@
 <?php
-include '../../koneksi.php';
+session_start();
+include '../koneksi.php';
 
 $IDUser=$_POST['IDUser'];
 $Nama=$_POST['Nama'];
@@ -14,7 +15,7 @@ VALUES('$IDUser','$Nama','$Password','$Hak_Akses','$Create_Date','$Manager')")
 or die(mysqli_error($koneksi));
 
 if($query){
-    header("Location: 01_user.php");
+    header('location:'.$url.'/home/'.$_SESSION['Akses'].'/user.php');
 }else{
     echo"Gagal Input";
 }

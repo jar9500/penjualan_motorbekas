@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../../koneksi.php';
+include '../koneksi.php';
 
 if (isset($_SESSION["Nama"])) {
     $ID=$_GET['ID'];
@@ -9,7 +9,7 @@ if (isset($_SESSION["Nama"])) {
     or die(mysqli_error($koneksi));
 
     if($query){
-        header("Location: 01_identitas_motor.php");
+        header('location:'.$url.'/home/'.$_SESSION['Akses'].'/identitas_motor.php');
     }else{
         echo"Gagal";
     }

@@ -31,7 +31,7 @@
             </li>
         </ul>
         <?php if (isset($_SESSION["Nama"])) : ?>
-            <p class="h6 text-white">Halo <?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Hak_Akses"] ?></p>
+            <p class="h6 text-white">Halo <?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
     </div>
             <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
         <?php else : ?>

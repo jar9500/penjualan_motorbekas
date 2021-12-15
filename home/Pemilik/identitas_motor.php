@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-session_start(); 
+<?php
+session_start();
+if( !isset($_SESSION['Pemilik']) )
+{
+	header('location:../'.$_SESSION['Akses'].'/index.php');
+	exit();
+}
+$Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
 ?>
 <head>
 <meta charset="UTF-8">
@@ -19,22 +25,22 @@ session_start();
     <div class="container-fluid">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="01_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
+            <a href="index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_identitas_motor.php">Katalog Motor</a>
+            <a class="nav-link" href="identitas_motor.php">Katalog Motor</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_alert.php">Transaksi</a>
+            <a class="nav-link" href="alert.php">Transaksi</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_user.php">Kelola User</a>
+            <a class="nav-link" href="user.php">Kelola User</a>
         </li>
     </ul>
-    </div>
     <?php if (isset($_SESSION["Nama"])) : ?>
-        <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
-        <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
+        <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
+	</div>
+		<a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
         <a href="../../login.php" class="btn btn-light buttonnavbar">Login</a>
     <?php endif; ?>
@@ -96,8 +102,8 @@ session_start();
 						<td><?php echo $identitasmotor['KodeLokasi'];?></td>
 						<td><?php echo $identitasmotor['MasaBerlakuSTNK'];?></td>
 						<td>
-                            <a href="01_identitas_motor_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
-                            <a href="01_identitas_motor_update.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
+                            <a href="../../proses/identitas_motor_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
+                            <a href="identitas_motor_update.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
 						</td>
 					</tr>
                 <?php }
@@ -106,7 +112,7 @@ session_start();
             </table>
         </div>
     </div>
-	<a class="btn btn-success my-4" href="01_identitas_motor_create.php" >Tambah Data</a>
+	<a class="btn btn-success my-4" href="identitas_motor_create.php" >Tambah Data</a>
 </div>
 
 <!-- Footer -->

@@ -22,44 +22,35 @@ $cek = mysqli_num_rows($query);
 if($cek > 0){
 
 	$data = mysqli_fetch_assoc($query);
+	$_SESSION['nama_user'] = $data['Nama'];
+    $_SESSION['Akses']     = $data['Hak_Akses'];
 
 	// cek jika user login sebagai pemilik
 	if($data['Hak_Akses']=="Pemilik"){
-
 		// buat session login dan username
 		$_SESSION['Nama'] = $Nama;
-		$_SESSION['Hak_Akses'] = "Pemilik";
-		// alihkan ke halaman dashboard admin
-		header("location:home/pemilik/01_index.php");
+		$_SESSION['Pemilik'] = TRUE;
 
 	// cek jika user login sebagai Teller
 	}else if($data['Hak_Akses']=="Teller"){
 		// buat session login dan username
 		$_SESSION['Nama'] = $Nama;
-		$_SESSION['Hak_Akses'] = "Teller";
-		// alihkan ke halaman dashboard pegawai
-		header("location:home/teller/02_index.php");
+		$_SESSION['Teller'] = TRUE;
 
 	// cek jika user login sebagai Customer
 	}else if($data['Hak_Akses']=="Customer"){
 		// buat session login dan username
 		$_SESSION['Nama'] = $Nama;
-		$_SESSION['Hak_Akses'] = "Customer";
-		// alihkan ke halaman dashboard pengurus
-		header("location:home/customer/04_index.php");
+		$_SESSION['Customer'] = TRUE;
 
     }else if($data['Hak_Akses']=="Teknisi"){
 		// buat session login dan username
 		$_SESSION['Nama'] = $Nama;
-		$_SESSION['Hak_Akses'] = "Teknisi";
-		// alihkan ke halaman dashboard pengurus
-		header("location:home/teknisi/03_index.php");
+		$_SESSION['Teknisi'] = TRUE;
 
-	}else{
-		echo "<script>alert('Nama atau Password Tidak Terdaftar !')</script>";
-		// alihkan ke halaman login kembali
-		header("location:login.php?pesan=gagal");
-	}	
+	}
+	header('location:'.$url.'/home/'.$_SESSION['Akses'].'/index.php');
+
 }else{
 	echo "<script>alert('Nama atau Password Tidak Terdaftar !')
 	history.back(self)</script>";

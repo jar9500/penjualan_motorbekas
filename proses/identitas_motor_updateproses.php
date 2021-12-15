@@ -1,6 +1,8 @@
 <?php
-include '../../koneksi.php';
+session_start();
+include '../koneksi.php';
 
+$IDLama=$_GET['ID'];
 $ID=$_POST['ID'];
 $NoRegistrasi=$_POST['NoRegistrasi'];
 $NamaPemilik=$_POST['NamaPemilik'];
@@ -20,14 +22,15 @@ $NoBPKB=$_POST['NoBPKB'];
 $KodeLokasi=$_POST['KodeLokasi'];
 $MasaBerlakuSTNK=$_POST['MasaBerlakuSTNK'];
 
-$query=mysqli_query($koneksi,"INSERT INTO identitas_motor (ID,NoRegistrasi,NamaPemilik,Alamat,NoRangka,NoMesin,
-PlatNo,Merk,Type,Model,TahunPembuatan,IsiSilinder,BahanBakar,WarnaTNKB,TahunRegistrasi,NoBPKB,KodeLokasi,MasaBerlakuSTNK) 
-VALUES('$ID','$NoRegistrasi','$NamaPemilik','$Alamat','$NoRangka','$NoMesin','$PlatNo','$Merk','$Type','$Model',
-'$TahunPembuatan','$IsiSilinder','$BahanBakar','$WarnaTNKB','$TahunRegistrasi','$NoBPKB','$KodeLokasi','$MasaBerlakuSTNK')")
+$query=mysqli_query($koneksi,"UPDATE identitas_motor SET ID='$ID', NoRegistrasi='$NoRegistrasi', 
+NamaPemilik='$NamaPemilik', Alamat='$Alamat',NoRangka='$NoRangka',NoMesin='$NoMesin',PlatNo='$PlatNo',
+Merk='$Merk',Type='$Type',Model='$Model',TahunPembuatan='$TahunPembuatan',IsiSilinder='$IsiSilinder',
+BahanBakar='$BahanBakar',WarnaTNKB='$WarnaTNKB',TahunRegistrasi='$TahunRegistrasi',NoBPKB='$NoBPKB',
+KodeLokasi='$KodeLokasi',MasaBerlakuSTNK='$MasaBerlakuSTNK' WHERE ID='$IDLama' ")
 or die(mysqli_error($koneksi));
 
 if($query){
-    header("Location: 01_identitas_motor.php");
+    header('location:'.$url.'/home/'.$_SESSION['Akses'].'/identitas_motor.php');
 }else{
     echo"Gagal Input";
 }

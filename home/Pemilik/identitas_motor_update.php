@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-session_start(); 
+session_start();
+if( !isset($_SESSION['Pemilik']) )
+{
+	header('location:../'.$_SESSION['Akses'].'/index.php');
+	exit();
+}
+$Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
 ?>
 <head>
 <meta charset="UTF-8">
@@ -19,21 +25,21 @@ session_start();
     <div class="container-fluid">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="01_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
+            <a href="index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_identitas_motor.php">Katalog Motor</a>
+            <a class="nav-link" href="identitas_motor.php">Katalog Motor</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_alert.php">Transaksi</a>
+            <a class="nav-link" href="alert.php">Transaksi</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="01_user.php">Kelola User</a>
+            <a class="nav-link" href="user.php">Kelola User</a>
         </li>
     </ul>
-    </div>
     <?php if (isset($_SESSION["Nama"])) : ?>
-        <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?></p>
+        <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
+    </div>
         <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
         <a href="../../login.php" class="btn btn-light buttonnavbar">Login</a>
@@ -52,7 +58,7 @@ session_start();
                 $data=mysqli_query($koneksi,"SELECT * from identitas_motor where ID='$ID' ") or die(mysqli_error($koneksi));
                 $identitas_motor=mysqli_fetch_array($data);
             ?>
-			<form method="post" action="01_identitas_motor_updateproses.php?ID=<?php echo $ID?>">
+			<form method="post" action="../../proses/identitas_motor_updateproses.php?ID=<?php echo $ID?>">
                 <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="ID">ID</label>
                     <div class="col-sm-4">
