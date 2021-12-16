@@ -7,7 +7,6 @@ if( !isset($_SESSION['Pemilik']) )
     header('location:../'.$_SESSION['Akses'].'/index.php');
     exit();
 }
-$Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
 ?>
 <head>
 <meta charset="UTF-8">
@@ -58,8 +57,6 @@ $Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="ID" placeholder="ID">
                     </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="NoRegistrasi">No Registrasi</label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="NoRegistrasi" placeholder="No Registrasi">
@@ -70,8 +67,6 @@ $Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="NamaPemilik" placeholder="Nama Pemilik">
                     </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="Alamat">Alamat </label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="Alamat" placeholder="Alamat ">
@@ -82,8 +77,6 @@ $Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="NoRangka" placeholder="No Rangka">
                     </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="NoMesin">No Mesin</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="NoMesin" placeholder="No Mesin">
@@ -94,8 +87,6 @@ $Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="PlatNo" placeholder="Plat No">
                     </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="Merk">Merk</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="Merk" placeholder="Merk">
@@ -106,8 +97,6 @@ $Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="Type" placeholder="Type">
                     </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="Model">Model</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="Model" placeholder="Model">
@@ -118,8 +107,6 @@ $Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
                     <div class="col-sm-4">
                         <input type="year" class="form-control" name="TahunPembuatan" placeholder="Tahun Pembuatan">
                     </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="IsiSilinder">Isi Silinder</label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="IsiSilinder" placeholder="Isi Silinder">
@@ -130,8 +117,6 @@ $Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="BahanBakar" placeholder="Bahan Bakar">
                     </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="WarnaTNKB">Warna TNKB</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="WarnaTNKB" placeholder="Warna TNKB">
@@ -142,8 +127,6 @@ $Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
                     <div class="col-sm-4">
                         <input type="year" class="form-control" name="TahunRegistrasi" placeholder="TahunRegistrasi">
                     </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="NoBPKB">Nomor BPKB</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="NoBPKB" placeholder="Nomor BPKB">
@@ -154,11 +137,35 @@ $Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="KodeLokasi" placeholder="KodeLokasi">
                     </div>
-                </div>
-                <div class="form-group row my-4">
                     <label class="col-sm-2 col-form-label" for="MasaBerlakuSTNK">Masa Berlaku STNK </label>
                     <div class="col-sm-4">
                         <input type="date" class="form-control" name="MasaBerlakuSTNK" placeholder="Masa Berlaku STNK">
+                    </div>
+                </div>
+                <div class="form-group row my-4">
+                    <label class="col-sm-2 col-form-label" for="Tgl_Beli">Tanggal Beli </label>
+                    <div class="col-sm-4">
+                        <input type="date" class="form-control" name="Tgl_Beli">
+                    </div>
+                    <label class="col-sm-2 col-form-label" for="Harga_Beli">Harga Beli </label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="Harga_Beli">
+                    </div>
+                </div>
+                <div class="form-group row my-4">
+                    <label class="col-sm-2 col-form-label" for="Tgl_Jual">Tanggal Jual </label>
+                    <div class="col-sm-4">
+                        <input type="date" class="form-control" name="Tgl_Jual">
+                    </div>
+                    <label class="col-sm-2 col-form-label" for="Harga_Jual">Harga Jual </label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="Harga_Jual">
+                    </div>
+                </div>
+                <div class="form-group row my-4">
+                    <label class="col-sm-2 col-form-label" for="Gambar_Motor">Gambar Motor </label>
+                    <div class="col-sm-4">
+                        <input type="file" class="form-control" name="Gambar_Motor">
                     </div>
                 </div>
                 

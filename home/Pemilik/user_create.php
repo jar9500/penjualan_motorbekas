@@ -7,7 +7,7 @@ if( !isset($_SESSION['Pemilik']) )
 	header('location:../'.$_SESSION['Akses'].'/index.php');
 	exit();
 }
-$Nama = ( isset($_SESSION['Nama_User']) ) ? $_SESSION['Nama_User'] : '';
+
 ?>
     <head>
         <meta charset="UTF-8" />

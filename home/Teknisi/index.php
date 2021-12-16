@@ -2,6 +2,11 @@
     <html lang="en">
     <?php 
     session_start(); 
+    if( !isset($_SESSION['Teknisi']) )
+    {
+        header('location:../'.$_SESSION['Akses'].'/index.php');
+        exit();
+    }
     ?>
     <head>
     <meta charset="UTF-8">
@@ -18,16 +23,16 @@
     <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a href="03_index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
+            <a href="index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="03_alert.php">Katalog Motor</a>
+            <a class="nav-link" href="alert.php">Katalog Motor</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="03_transaksi.php">Transaksi</a>
+            <a class="nav-link" href="transaksi.php">Transaksi</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="03_alert.php">Kelola User</a>
+            <a class="nav-link" href="alert.php">Kelola User</a>
             </li>
         </ul>
         <?php if (isset($_SESSION["Nama"])) : ?>
