@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2021 at 07:25 AM
+-- Generation Time: Dec 16, 2021 at 05:56 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.26
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `penjualan_motorbekas`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `Id_Cust` int(11) NOT NULL,
+  `Nama_Cust` varchar(255) NOT NULL,
+  `Alamat_Cust` varchar(255) NOT NULL,
+  `Telp_Cust` varchar(15) NOT NULL,
+  `NIK_Cust` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -45,20 +59,25 @@ CREATE TABLE `identitas_motor` (
   `TahunRegistrasi` year(4) NOT NULL,
   `NoBPKB` varchar(8) NOT NULL,
   `KodeLokasi` varchar(10) NOT NULL,
-  `MasaBerlakuSTNK` date NOT NULL
+  `MasaBerlakuSTNK` date NOT NULL,
+  `Gambar_Motor` text NOT NULL,
+  `Tgl_Beli` date DEFAULT NULL,
+  `Harga_Beli` int(11) NOT NULL,
+  `Tgl_Jual` date DEFAULT NULL,
+  `Harga_Jual` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `identitas_motor`
 --
 
-INSERT INTO `identitas_motor` (`ID`, `NoRegistrasi`, `NamaPemilik`, `Alamat`, `NoRangka`, `NoMesin`, `PlatNo`, `Merk`, `Type`, `Model`, `TahunPembuatan`, `IsiSilinder`, `BahanBakar`, `WarnaTNKB`, `TahunRegistrasi`, `NoBPKB`, `KodeLokasi`, `MasaBerlakuSTNK`) VALUES
-(10001, 2021000001, 'Jadid Alif Ramadhan', 'Bekasi Mustika Jaya', 'JAR0250001', 'BKS0250001', 'B2525KKP', 'Honda', 'Matic', 'Beat', 2013, 150, 'Bensin', 'Hitam', 2021, 'AA000001', 'B', '2022-10-25'),
-(10002, 2021000002, 'Ramadhan Alifia', 'Karawang Galuh Mas', 'JAR0250002', 'BKS0250002', 'T1234KCP', 'Yamaha', 'Bebek', 'Jupiter', 2009, 125, 'Bensin', 'Hijau', 2021, 'AA000002', 'T', '2021-11-25'),
-(10003, 2021000003, 'Alfi Rahman Dan', 'Jakarta Kalibata', 'JAR0250003', 'BKS0250003', 'B1925SCP', 'Yamaha', 'Sport', 'PCX', 2018, 220, 'Bensin', 'Hitam', 2021, 'AA000003', 'B', '2024-11-17'),
-(10004, 2021000004, 'Kasino', 'Jakarta Cakung', 'JAR0250004', 'BKS0250004', 'B2020TSA', 'Honda', 'Bebek', 'Revo', 2017, 120, 'Bensin', 'Hitam', 2021, 'AA000004', 'B', '2021-07-14'),
-(10005, 2021000005, 'Dono', 'Bogor Cibadak', 'JAR0250005', 'BKS0250005', 'F7780PTM', 'Kawasaki', 'Sport', 'Ninja', 2018, 250, 'Bensin', 'Merah', 2021, 'AA000005', 'F', '2021-11-10'),
-(10009, 2021000006, 'Indro', 'Karawang Cikampek', 'JAR0250006', 'BKS0250006', 'T1980TTM', 'Honda', 'Matic', 'Vario', 2014, 130, 'Bensin', 'Putih', 2021, 'AA000006', 'T', '2022-04-16');
+INSERT INTO `identitas_motor` (`ID`, `NoRegistrasi`, `NamaPemilik`, `Alamat`, `NoRangka`, `NoMesin`, `PlatNo`, `Merk`, `Type`, `Model`, `TahunPembuatan`, `IsiSilinder`, `BahanBakar`, `WarnaTNKB`, `TahunRegistrasi`, `NoBPKB`, `KodeLokasi`, `MasaBerlakuSTNK`, `Gambar_Motor`, `Tgl_Beli`, `Harga_Beli`, `Tgl_Jual`, `Harga_Jual`) VALUES
+(10001, 2021000001, 'Jadid Alif Ramadhan', 'Bekasi Mustika Jaya', 'JAR0250001', 'BKS0250001', 'B2525KKP', 'Honda', 'Matic', 'Beat', 2013, 150, 'Bensin', 'Hitam', 2021, 'AA000001', 'B', '2022-10-25', '', NULL, 0, NULL, 0),
+(10002, 2021000002, 'Ramadhan Alifia', 'Karawang Galuh Mas', 'JAR0250002', 'BKS0250002', 'T1234KCP', 'Yamaha', 'Bebek', 'Jupiter', 2009, 125, 'Bensin', 'Hijau', 2021, 'AA000002', 'T', '2021-11-25', '', NULL, 0, NULL, 0),
+(10003, 2021000003, 'Alfi Rahman Dan', 'Jakarta Kalibata', 'JAR0250003', 'BKS0250003', 'B1925SCP', 'Yamaha', 'Sport', 'PCX', 2018, 220, 'Bensin', 'Hitam', 2021, 'AA000003', 'B', '2024-11-17', '', NULL, 0, NULL, 0),
+(10004, 2021000004, 'Kasino', 'Jakarta Cakung', 'JAR0250004', 'BKS0250004', 'B2020TSA', 'Honda', 'Bebek', 'Revo', 2017, 120, 'Bensin', 'Hitam', 2021, 'AA000004', 'B', '2021-07-14', '', NULL, 0, NULL, 0),
+(10005, 2021000005, 'Dono', 'Bogor Cibadak', 'JAR0250005', 'BKS0250005', 'F7780PTM', 'Kawasaki', 'Sport', 'Ninja', 2018, 250, 'Bensin', 'Merah', 2021, 'AA000005', 'F', '2021-11-10', '', NULL, 0, NULL, 0),
+(10009, 2021000006, 'Indro', 'Karawang Cikampek', 'JAR0250006', 'BKS0250006', 'T1980TTM', 'Honda', 'Matic', 'Vario', 2014, 130, 'Bensin', 'Putih', 2021, 'AA000006', 'T', '2022-04-16', '', NULL, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -83,11 +102,19 @@ INSERT INTO `user` (`IDUser`, `Nama`, `Password`, `Hak_Akses`, `Create_Date`, `M
 (1, 'Bayu', 'd0c6a909f539307f0f60282674009e31', 'Pemilik', '2021-12-06', '-'),
 (2, 'Rico', 'ec8761509e47638ec23f59c3073bce08', 'Teller', '2021-12-06', '-'),
 (3, 'Jadid', 'e90d1b819d8a0e9398aad9ffad3c6ee2', 'Customer', '2021-12-05', '-'),
-(5, 'Dian', 'd096dd8f02bdac9358a28bac34b42d3c', 'Teknisi', '2021-12-06', '-');
+(4, 'Dara', '3c20ade1447676f0d3667e668d92a695', 'Pemilik', '2021-12-15', '-'),
+(5, 'Dian', 'd096dd8f02bdac9358a28bac34b42d3c', 'Teknisi', '2021-12-06', '-'),
+(6, 'Alif', '01a56d45f4a2cb6ec3d461b941db08cf', 'Teller', '2021-12-16', '-');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`Id_Cust`);
 
 --
 -- Indexes for table `identitas_motor`
