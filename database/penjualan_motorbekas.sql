@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2021 at 05:56 PM
+-- Generation Time: Dec 17, 2021 at 08:07 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.26
 
@@ -60,7 +60,7 @@ CREATE TABLE `identitas_motor` (
   `NoBPKB` varchar(8) NOT NULL,
   `KodeLokasi` varchar(10) NOT NULL,
   `MasaBerlakuSTNK` date NOT NULL,
-  `Gambar_Motor` text NOT NULL,
+  `Gambar_Motor` varchar(255) NOT NULL,
   `Tgl_Beli` date DEFAULT NULL,
   `Harga_Beli` int(11) NOT NULL,
   `Tgl_Jual` date DEFAULT NULL,
@@ -72,12 +72,27 @@ CREATE TABLE `identitas_motor` (
 --
 
 INSERT INTO `identitas_motor` (`ID`, `NoRegistrasi`, `NamaPemilik`, `Alamat`, `NoRangka`, `NoMesin`, `PlatNo`, `Merk`, `Type`, `Model`, `TahunPembuatan`, `IsiSilinder`, `BahanBakar`, `WarnaTNKB`, `TahunRegistrasi`, `NoBPKB`, `KodeLokasi`, `MasaBerlakuSTNK`, `Gambar_Motor`, `Tgl_Beli`, `Harga_Beli`, `Tgl_Jual`, `Harga_Jual`) VALUES
-(10001, 2021000001, 'Jadid Alif Ramadhan', 'Bekasi Mustika Jaya', 'JAR0250001', 'BKS0250001', 'B2525KKP', 'Honda', 'Matic', 'Beat', 2013, 150, 'Bensin', 'Hitam', 2021, 'AA000001', 'B', '2022-10-25', '', NULL, 0, NULL, 0),
-(10002, 2021000002, 'Ramadhan Alifia', 'Karawang Galuh Mas', 'JAR0250002', 'BKS0250002', 'T1234KCP', 'Yamaha', 'Bebek', 'Jupiter', 2009, 125, 'Bensin', 'Hijau', 2021, 'AA000002', 'T', '2021-11-25', '', NULL, 0, NULL, 0),
+(10001, 2021000001, 'Jadid Alif Ramadhan', 'Bekasi Mustika Jaya', 'JAR0250001', 'BKS0250001', 'B2525KKP', 'Honda', 'Matic', 'Beat', 2013, 150, 'Bensin', 'Hitam', 2021, 'AA000001', 'B', '2022-10-25', '779-Beat.png', '2014-01-01', 13000000, '2021-12-17', 6000000),
+(10002, 2021000002, 'Ramadhan Alifia', 'Karawang Galuh Mas', 'JAR0250002', 'BKS0250002', 'T1234KCP', 'Yamaha', 'Bebek', 'Jupiter', 2009, 125, 'Bensin', 'Hijau', 2021, 'AA000002', 'T', '2021-11-25', '325-Jupiter.png', '2021-12-17', 14000000, '2021-12-25', 15000000),
 (10003, 2021000003, 'Alfi Rahman Dan', 'Jakarta Kalibata', 'JAR0250003', 'BKS0250003', 'B1925SCP', 'Yamaha', 'Sport', 'PCX', 2018, 220, 'Bensin', 'Hitam', 2021, 'AA000003', 'B', '2024-11-17', '', NULL, 0, NULL, 0),
 (10004, 2021000004, 'Kasino', 'Jakarta Cakung', 'JAR0250004', 'BKS0250004', 'B2020TSA', 'Honda', 'Bebek', 'Revo', 2017, 120, 'Bensin', 'Hitam', 2021, 'AA000004', 'B', '2021-07-14', '', NULL, 0, NULL, 0),
 (10005, 2021000005, 'Dono', 'Bogor Cibadak', 'JAR0250005', 'BKS0250005', 'F7780PTM', 'Kawasaki', 'Sport', 'Ninja', 2018, 250, 'Bensin', 'Merah', 2021, 'AA000005', 'F', '2021-11-10', '', NULL, 0, NULL, 0),
 (10009, 2021000006, 'Indro', 'Karawang Cikampek', 'JAR0250006', 'BKS0250006', 'T1980TTM', 'Honda', 'Matic', 'Vario', 2014, 130, 'Bensin', 'Putih', 2021, 'AA000006', 'T', '2022-04-16', '', NULL, 0, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaksi_penjualan`
+--
+
+CREATE TABLE `transaksi_penjualan` (
+  `IdTrsk` int(11) NOT NULL,
+  `Tgl_Trsk` date DEFAULT NULL,
+  `Id_Cust` int(11) NOT NULL,
+  `Id_Kendaraan` int(11) NOT NULL,
+  `Harga_Jual` int(11) NOT NULL,
+  `Harga_Jual_Real` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -121,6 +136,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `identitas_motor`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `transaksi_penjualan`
+--
+ALTER TABLE `transaksi_penjualan`
+  ADD PRIMARY KEY (`IdTrsk`);
 
 --
 -- Indexes for table `user`
