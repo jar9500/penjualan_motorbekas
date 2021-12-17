@@ -20,21 +20,25 @@ if( !isset($_SESSION['Pemilik']) )
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
-    <div class="container-fluid">
+      <div class="container-fluid">
         <ul class="navbar-nav">
-            <li class="nav-item">
+          <li class="nav-item">
             <a href="index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
-            </li>
-            <li class="nav-item">
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="identitas_motor.php">Katalog Motor</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="alert.php">Transaksi</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="user.php">Kelola User</a>
-        </li>
-      </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transaksi</a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="daftar_barang.php">Daftar Barang</a>
+              <a class="dropdown-item" href="alert.php">Transaksi</a>
+            </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="user.php">Kelola User</a>
+          </li>
+        </ul>
       <?php if (isset($_SESSION["Nama"])) : ?>
         <p class="h6 text-white">Halo <?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
     </div>

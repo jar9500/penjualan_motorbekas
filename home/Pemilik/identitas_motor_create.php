@@ -29,15 +29,19 @@ if( !isset($_SESSION['Pemilik']) )
         <li class="nav-item">
             <a class="nav-link" href="identitas_motor.php">Katalog Motor</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="alert.php">Transaksi</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transaksi</a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="daftar_barang.php">Daftar Barang</a>
+                <a class="dropdown-item" href="alert.php">Transaksi</a>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="user.php">Kelola User</a>
         </li>
     </ul>
     <?php if (isset($_SESSION["Nama"])) : ?>
-        <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
+        <p class="h6 text-white mr-5">Halo <?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
     </div>
         <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
@@ -51,11 +55,11 @@ if( !isset($_SESSION['Pemilik']) )
 <!-- body -->
 <div class="container" >
 		<div class="bg-light m-4 p-4">
-			<form method="post" action="../../proses/identitas_motor_createproses.php">
+			<form method="POST" action="../../proses/identitas_motor_createproses.php" enctype="multipart/form-data">
                 <div class="form-group row my-4">
-                    <label class="col-sm-2 col-form-label" for="ID">ID</label>
+                    <label class="col-sm-2 col-form-label" for="ID">ID*</label>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="ID" placeholder="ID">
+                        <input type="number" class="form-control" name="ID" placeholder="ID" Required>
                     </div>
                     <label class="col-sm-2 col-form-label" for="NoRegistrasi">No Registrasi</label>
                     <div class="col-sm-4">
@@ -63,9 +67,9 @@ if( !isset($_SESSION['Pemilik']) )
                     </div>
                 </div>
                 <div class="form-group row my-4">
-                    <label class="col-sm-2 col-form-label" for="NamaPemilik">Nama Pemilik</label>
+                    <label class="col-sm-2 col-form-label" for="NamaPemilik">Nama Pemilik*</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="NamaPemilik" placeholder="Nama Pemilik">
+                        <input type="text" class="form-control" name="NamaPemilik" placeholder="Nama Pemilik" Required>
                     </div>
                     <label class="col-sm-2 col-form-label" for="Alamat">Alamat </label>
                     <div class="col-sm-4">
@@ -143,40 +147,41 @@ if( !isset($_SESSION['Pemilik']) )
                     </div>
                 </div>
                 <div class="form-group row my-4">
-                    <label class="col-sm-2 col-form-label" for="Tgl_Beli">Tanggal Beli </label>
+                    <label class="col-sm-2 col-form-label" for="Tgl_Beli">Tanggal Beli* </label>
                     <div class="col-sm-4">
-                        <input type="date" class="form-control" name="Tgl_Beli">
+                        <input type="date" class="form-control" name="Tgl_Beli" Required>
                     </div>
                     <label class="col-sm-2 col-form-label" for="Harga_Beli">Harga Beli </label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="Harga_Beli">
+                        <input type="text" class="form-control" name="Harga_Beli" placeholder="Rp. -">
                     </div>
                 </div>
                 <div class="form-group row my-4">
-                    <label class="col-sm-2 col-form-label" for="Tgl_Jual">Tanggal Jual </label>
+                    <label class="col-sm-2 col-form-label" for="Tgl_Jual">Tanggal Jual* </label>
                     <div class="col-sm-4">
-                        <input type="date" class="form-control" name="Tgl_Jual">
+                        <input type="date" class="form-control" name="Tgl_Jual" Required> 
                     </div>
                     <label class="col-sm-2 col-form-label" for="Harga_Jual">Harga Jual </label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="Harga_Jual">
+                        <input type="text" class="form-control" name="Harga_Jual" placeholder="Rp. -">
                     </div>
                 </div>
                 <div class="form-group row my-4">
-                    <label class="col-sm-2 col-form-label" for="Gambar_Motor">Gambar Motor </label>
+                    <label class="col-sm-2 col-form-label" for="Gambar_Motor">Gambar Motor* </label>
                     <div class="col-sm-4">
-                        <input type="file" class="form-control" name="Gambar_Motor">
+                        <input type="file" class="form-control" name="Gambar_Motor" Required>
                     </div>
                 </div>
                 
                 <div class="form-group row my-4">
                     <div class="col-sm-10">
                         <input type="submit" class="btn btn-success px-4" name="Simpan"></button>
+                        <p class="text-danger">* Wajib di isi</p>
                     </div>
                 </div>
             </form>
         </div>
-        Hanya Pemilik yang bisa akses halaman ini, Selamat Datang <?php echo $_SESSION["Nama"] ?>
+        
     </div>
     <!-- Footer -->
 <footer>

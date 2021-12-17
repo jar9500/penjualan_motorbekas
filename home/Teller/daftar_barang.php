@@ -37,7 +37,7 @@ if( !isset($_SESSION['Teller']) )
         </li>
     </ul>
     <?php if (isset($_SESSION["Nama"])) : ?>
-        <p class="h6 text-white mr-5">Halo,<?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
+        <p class="h6 text-white mr-5">Halo <?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
     </div>
         <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
@@ -46,7 +46,7 @@ if( !isset($_SESSION['Teller']) )
 </nav>
 <!-- header -->
 <div class="header">
-    <h1 class="mt-5">Transaksi</h1>
+    <h1 class="mt-5">Galeri Motor</h1>
 </div>
 <!-- body -->
 <div class="container">
@@ -56,9 +56,8 @@ if( !isset($_SESSION['Teller']) )
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Motor</th>
+						<th class="text-center">Daftar Barang</th>
 						<th>Merk / Model / Tipe</th>
-                        <th>Edit/Hapus</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -68,16 +67,12 @@ if( !isset($_SESSION['Teller']) )
                     foreach($data as $identitasmotor){?>
 					<tr>
 						<td><?php echo $identitasmotor['ID'];?></td>
-						<td><img src='img/".$data['Gambar_Motor']."' width='100' height='100'></td></td>
+						<td class="text-center"><img src="../../img/identitas_motor/<?php echo $identitasmotor['Gambar_Motor']; ?>" style="width: 300px;"></td>
 						<td>
                             <?php echo $identitasmotor['Merk'];?> /
                             <?php echo $identitasmotor['Model'];?> /
                             <?php echo $identitasmotor['Type'];?>
                         </td>
-						<td>
-                            <a href="02_transaksi_delete.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
-                            <a href="02_transaksi_update.php?ID=<?php echo $identitasmotor['ID']?>" class="btn btn-warning">Edit</a>
-						</td>
 					</tr>
                 <?php }
                 ?>    
