@@ -2,7 +2,7 @@
 <html lang="en">
 <?php 
 session_start(); 
-if( !isset($_SESSION['Teller']) )
+if( !isset($_SESSION['Customer']) )
 {
     header('location:../'.$_SESSION['Akses'].'/index.php');
     exit();
@@ -27,7 +27,7 @@ if( !isset($_SESSION['Teller']) )
             <a href="index.php"><img src="../../img/logo.png" class="logo-navbar"><a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="identitas_motor.php">Katalog Motor</a>
+            <a class="nav-link" href="alert.php">Katalog Motor</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transaksi</a> 
@@ -37,7 +37,7 @@ if( !isset($_SESSION['Teller']) )
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="user.php">Kelola User</a>
+            <a class="nav-link" href="alert.php">Kelola User</a>
         </li>
     </ul>
     <?php if (isset($_SESSION["Nama"])) : ?>

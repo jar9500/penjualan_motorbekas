@@ -14,7 +14,7 @@ if (isset($_SESSION["Nama"])) {
         echo"Gagal";
     }
 }else{
-    header("Location:../../login.php");
+    header("Location:../login.php");
 }
 
 ?>

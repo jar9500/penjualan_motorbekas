@@ -50,7 +50,7 @@ if( !isset($_SESSION['Pemilik']) )
 </nav>
 <!-- header -->
 <div class="header">
-    <h1 class="mt-5">Input Data Motor</h1>
+    <h1 class="mt-5">Edit Data Motor</h1>
 </div>
 <!-- body -->
 <div class="container" >

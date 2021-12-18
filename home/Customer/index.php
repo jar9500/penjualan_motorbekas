@@ -31,7 +31,7 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transaksi</a> 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="alert.php">Daftar Barang</a>
+                <a class="dropdown-item" href="daftar_barang.php">Daftar Barang</a>
                 <a class="dropdown-item" href="transaksi.php">Transaksi</a>
             </div>
         </li>

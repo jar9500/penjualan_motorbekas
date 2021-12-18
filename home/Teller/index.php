@@ -18,8 +18,8 @@ if( !isset($_SESSION['Teller']) )
     <script script src="../../bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
     <div class="container-fluid">
     <ul class="navbar-nav">
         <li class="nav-item">

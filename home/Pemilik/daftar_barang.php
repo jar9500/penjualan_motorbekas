@@ -2,7 +2,7 @@
 <html lang="en">
 <?php 
 session_start(); 
-if( !isset($_SESSION['Teller']) )
+if( !isset($_SESSION['Pemilik']) )
 {
     header('location:../'.$_SESSION['Akses'].'/index.php');
     exit();
@@ -33,7 +33,7 @@ if( !isset($_SESSION['Teller']) )
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transaksi</a> 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="daftar_barang.php">Daftar Barang</a>
-                <a class="dropdown-item" href="transaksi.php">Transaksi</a>
+                <a class="dropdown-item" href="alert.php">Transaksi</a>
             </div>
         </li>
         <li class="nav-item">

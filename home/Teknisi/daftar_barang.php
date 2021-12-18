@@ -2,7 +2,7 @@
 <html lang="en">
 <?php 
 session_start(); 
-if( !isset($_SESSION['Teller']) )
+if( !isset($_SESSION['Teknisi']) )
 {
     header('location:../'.$_SESSION['Akses'].'/index.php');
     exit();

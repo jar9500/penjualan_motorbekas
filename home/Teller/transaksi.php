@@ -20,7 +20,7 @@ if( !isset($_SESSION['Teller']) )
 
 <body>
 <!-- navbar -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
     <div class="container-fluid">
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -41,7 +41,7 @@ if( !isset($_SESSION['Teller']) )
         </li>
     </ul>
     <?php if (isset($_SESSION["Nama"])) : ?>
-        <p class="h6 text-white mr-5">Halo <?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
+        <p class="h6 text-white">Halo <?php echo $_SESSION["Nama"] ?>, Hak Akses Kamu <?php echo $_SESSION["Akses"] ?></p>
     </div>
         <a href="../../logout.php" class="btn btn-light buttonnavbar">Logout</a>
     <?php else : ?>
@@ -50,32 +50,48 @@ if( !isset($_SESSION['Teller']) )
 </nav>
 <!-- header -->
 <div class="header">
-    <h1 class="mt-5">Galeri Motor</h1>
+    <h1 class="mt-5">Transaksi</h1>
 </div>
 <!-- body -->
 <div class="container">
-    <div class="row mx-60">
-        <div class="row">
-        <?php
-        include '../../koneksi.php';
-        $data=mysqli_query($koneksi,"SELECT * FROM Identitas_Motor") or die(mysqli_error($koneksi));
-        foreach($data as $identitasmotor){?>
-            <div class="col-md-4 border border-2  shadow p-3 mb-5 bg-white ">
-                <div class="well">
-                    <img class="thumbnail img-responsive" id="gallery" alt="Contoh Gambar" 
-                    src="../../img/identitas_motor/<?php echo $identitasmotor['Gambar_Motor']; ?>">
-                    <figcaption class="figure-caption">
-                        <?php echo $identitasmotor['Merk'];?> /
-                        <?php echo $identitasmotor['Model'];?> /
-                        <?php echo $identitasmotor['Type'];?> / Rp. 
-                        <?php echo $identitasmotor['Harga_Jual'];?>,00-
-                    </figcaption>
-                </div>
-            </div>
-            <?php }
+	<div class="mt-4">
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>ID Transaksi</th>
+						<th>Tanggal Transaksi</th>
+						<th>ID Customer</th>
+						<th>ID Kendaraan</th>
+						<th>Harga Jual</th>
+						<th>Harga Jual Asli</th>
+                        <th>Edit/Hapus</th>
+					</tr>
+				</thead>
+				<tbody>
+                <?php
+                    include '../../koneksi.php';
+                    $data=mysqli_query($koneksi,"SELECT * FROM transaksi_penjualan order by Tgl_Trsk DESC") or die(mysqli_error($koneksi));
+                    foreach($data as $transaksi){?>
+					<tr>
+                        <td><?php echo $transaksi['Tgl_Trsk'];?></td>
+						<td><?php echo $transaksi['IdTrsk'];?></td>
+						<td><?php echo $transaksi['Id_Cust'];?></td>
+						<td><?php echo $transaksi['Id_Kendaraan'];?></td>
+						<td><?php echo $transaksi['Harga_Jual'];?></td>
+						<td><?php echo $transaksi['Harga_Jual_Real'];?></td>
+						<td>
+                            <a href="../../proses/transaksi_delete.php?IdTrsk=<?php echo $transaksi['IdTrsk']?>" class="btn btn-danger" onclick="return confirm('Anda akan menghapus data ini ?')">Hapus</a> 
+                            <a href="transaksi_update.php?IdTrsk=<?php echo $transaksi['IdTrsk']?>" class="btn btn-warning">Update</a> 
+						</td>
+					</tr>
+                <?php }
                 ?>    
+				</tbody>
+            </table>
         </div>
     </div>
+    <a class="btn btn-success my-4" href="transaksi_create.php" >Tambah Data</a>
 </div>
 
 <!-- Footer -->
