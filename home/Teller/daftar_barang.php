@@ -49,38 +49,32 @@ if( !isset($_SESSION['Teller']) )
     <h1 class="mt-5">Galeri Motor</h1>
 </div>
 <!-- body -->
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../../bootsrap.js"></script>
 <div class="container">
-	<div class="mt-4">
-		<div class="table-responsive">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th class="text-center">Daftar Barang</th>
-						<th>Merk / Model / Tipe</th>
-					</tr>
-				</thead>
-				<tbody>
-                <?php
-                    include '../../koneksi.php';
-                    $data=mysqli_query($koneksi,"SELECT * FROM Identitas_Motor") or die(mysqli_error($koneksi));
-                    foreach($data as $identitasmotor){?>
-					<tr>
-						<td><?php echo $identitasmotor['ID'];?></td>
-						<td class="text-center"><img src="../../img/identitas_motor/<?php echo $identitasmotor['Gambar_Motor']; ?>" style="width: 300px;"></td>
-						<td>
-                            <?php echo $identitasmotor['Merk'];?> /
-                            <?php echo $identitasmotor['Model'];?> /
-                            <?php echo $identitasmotor['Type'];?>
-                        </td>
-					</tr>
-                <?php }
-                ?>    
-				</tbody>
-            </table>
+    <div class="row mtb-60">
+        <div class="row">
+            <div class="col-md-4 border border-2  shadow p-3 mb-5 bg-white ">
+                <div class="well">
+                    <img class="thumbnail img-responsive" id="gallery" alt="Contoh Gambar" src="../../img/pm3.jpg" alt="">
+                    <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                </div>
+            </div>
+            <div class="col-md-4 border border-2 shadow p-3 mb-5 bg-white">
+                <div class="well">
+                    <img class="thumbnail img-responsive" id="gallery"  alt="Contoh Gambar" src="../../img/pm3.jpg" alt="">
+                    <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                </div>
+            </div>
+            <div class="col-md-4 border border-2  shadow p-3 mb-5 bg-white ">
+                <div class="well">
+                    <img class="thumbnail img-responsive" id="gallery" alt="Contoh Gambar" src="../../img/pm3.jpg" alt="">
+                    <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                </div>
+            </div>
         </div>
     </div>
-	<a class="btn btn-success my-4" href="02_transaksi_create.php" >Tambah Data</a>
 </div>
 
 <!-- Footer -->
