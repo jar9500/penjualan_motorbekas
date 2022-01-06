@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2021 at 08:10 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.26
+-- Generation Time: Jan 06, 2022 at 05:10 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,20 @@ CREATE TABLE `customer` (
   `Telp_Cust` varchar(15) NOT NULL,
   `NIK_Cust` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`Id_Cust`, `Nama_Cust`, `Alamat_Cust`, `Telp_Cust`, `NIK_Cust`) VALUES
+(1, 'Dara', 'Subang', '0989373873', 1212345553),
+(2, 'Rico', 'Jakarta Timur', '5567323', 9987065),
+(3, 'Jadid', 'Bekasi', '44879876', 678423234),
+(4, 'Bayu', 'Bekasi', '665784434', 6666644),
+(5, 'Lintar', 'Cikampek', '111113873', 22225553),
+(6, 'Danu', 'Karawang', '3333323', 4444465),
+(7, 'Tiara', 'Cirebon', '6666876', 77773234),
+(8, 'Fricyl', 'Bekasi', '8888434', 66466644);
 
 -- --------------------------------------------------------
 
@@ -159,6 +173,22 @@ ALTER TABLE `transaksi_penjualan`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`IDUser`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `Id_Cust` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `transaksi_penjualan`
+--
+ALTER TABLE `transaksi_penjualan`
+  MODIFY `IdTrsk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

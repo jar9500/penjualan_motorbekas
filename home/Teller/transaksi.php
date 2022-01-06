@@ -74,8 +74,8 @@ if( !isset($_SESSION['Teller']) )
                     $data=mysqli_query($koneksi,"SELECT * FROM transaksi_penjualan order by Tgl_Trsk DESC") or die(mysqli_error($koneksi));
                     foreach($data as $transaksi){?>
 					<tr>
-                        <td><?php echo $transaksi['Tgl_Trsk'];?></td>
-						<td><?php echo $transaksi['IdTrsk'];?></td>
+                        <td><?php echo $transaksi['IdTrsk'];?></td>
+						<td><?php echo $transaksi['Tgl_Trsk'];?></td>
 						<td><?php echo $transaksi['Id_Cust'];?></td>
 						<td><?php echo $transaksi['Id_Kendaraan'];?></td>
 						<td><?php echo $transaksi['Harga_Jual'];?></td>
